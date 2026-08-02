@@ -1,0 +1,2035 @@
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+}
+
+
+/* ---------- MAIN SCREEN ---------- */
+
+#app {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 50% 45%,
+            rgba(255, 255, 255, 0.7),
+            transparent 35%),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #ffc1dc,
+            #f8b4d9,
+            #ffd9e8
+        );
+}
+
+
+/* ---------- OPENING SCREEN ---------- */
+
+.opening-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 5;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* ---------- TEXT ---------- */
+
+.small-text {
+    font-size: 17px;
+    letter-spacing: 2px;
+
+    color: #9b3f68;
+
+    margin-bottom: 18px;
+
+    animation: fadeDown 1.5s ease forwards;
+}
+
+h1 {
+    font-size: clamp(50px, 8vw, 90px);
+
+    color: #9d174d;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 4px 15px rgba(157, 23, 77, 0.15);
+
+    animation: titleAppear 1.5s ease forwards;
+}
+
+.mystery-text {
+    font-size: clamp(18px, 2.5vw, 25px);
+
+    line-height: 1.7;
+
+    color: #71324f;
+
+    margin-bottom: 35px;
+
+    animation: fadeUp 1.8s ease forwards;
+}
+
+
+/* ---------- OPEN BUTTON ---------- */
+
+#openButton {
+    border: none;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #a41455;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(150, 35, 90, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+#openButton span {
+    font-size: 22px;
+}
+
+#openButton:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    background: white;
+
+    box-shadow:
+        0 15px 35px rgba(150, 35, 90, 0.25);
+}
+
+#openButton:active {
+    transform: scale(0.96);
+}
+
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.hearts {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 30;
+}
+
+.hearts span {
+    position: absolute;
+
+    bottom: -80px;
+
+    color: #f06292;
+
+    font-size: 35px;
+
+    opacity: 0.65;
+
+    animation: floatHeart linear infinite;
+}
+
+
+/* Different hearts */
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    font-size: 25px;
+    animation-duration: 10s;
+    animation-delay: 1s;
+    color: #ec407a;
+}
+
+.hearts span:nth-child(2) {
+    left: 13%;
+    font-size: 50px;
+    animation-duration: 14s;
+    animation-delay: 3s;
+    color: #f48fb1;
+}
+
+.hearts span:nth-child(3) {
+    left: 23%;
+    font-size: 30px;
+    animation-duration: 11s;
+    animation-delay: 0s;
+    color: #d81b60;
+}
+
+.hearts span:nth-child(4) {
+    left: 34%;
+    font-size: 60px;
+    animation-duration: 15s;
+    animation-delay: 5s;
+    color: #f8bbd0;
+}
+
+.hearts span:nth-child(5) {
+    left: 44%;
+    font-size: 25px;
+    animation-duration: 9s;
+    animation-delay: 2s;
+    color: #e91e63;
+}
+
+.hearts span:nth-child(6) {
+    left: 55%;
+    font-size: 45px;
+    animation-duration: 13s;
+    animation-delay: 4s;
+    color: #f06292;
+}
+
+.hearts span:nth-child(7) {
+    left: 64%;
+    font-size: 28px;
+    animation-duration: 10s;
+    animation-delay: 1s;
+    color: #ad1457;
+}
+
+.hearts span:nth-child(8) {
+    left: 73%;
+    font-size: 55px;
+    animation-duration: 16s;
+    animation-delay: 6s;
+    color: #f48fb1;
+}
+
+.hearts span:nth-child(9) {
+    left: 82%;
+    font-size: 32px;
+    animation-duration: 12s;
+    animation-delay: 2s;
+    color: #e91e63;
+}
+
+.hearts span:nth-child(10) {
+    left: 91%;
+    font-size: 48px;
+    animation-duration: 14s;
+    animation-delay: 5s;
+    color: #f8bbd0;
+}
+
+.hearts span:nth-child(11) {
+    left: 30%;
+    font-size: 20px;
+    animation-duration: 8s;
+    animation-delay: 4s;
+    color: #c2185b;
+}
+
+.hearts span:nth-child(12) {
+    left: 78%;
+    font-size: 22px;
+    animation-duration: 9s;
+    animation-delay: 0s;
+    color: #f06292;
+}
+
+
+/* ---------- SPARKLES ---------- */
+
+.sparkle {
+    position: absolute;
+
+    color: white;
+
+    opacity: 0.8;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8);
+
+    animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    top: 25%;
+    left: 20%;
+    font-size: 22px;
+}
+
+.sparkle-2 {
+    top: 30%;
+    right: 22%;
+    font-size: 30px;
+
+    animation-delay: 0.8s;
+}
+
+.sparkle-3 {
+    bottom: 25%;
+    left: 28%;
+    font-size: 18px;
+
+    animation-delay: 1.4s;
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.65;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(30px)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: scale(0.7);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    .small-text {
+        font-size: 14px;
+    }
+
+    .mystery-text {
+        font-size: 17px;
+    }
+
+    #openButton {
+        font-size: 16px;
+        padding: 13px 27px;
+    }
+
+    .hearts span {
+        opacity: 0.5;
+    }
+}
+/* =========================================
+   DIARY SCREEN
+========================================= */
+
+.diary-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 40px 12px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.65),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #f8b4d9,
+            #ffc9df
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1s ease;
+}
+
+
+/* When diary screen becomes visible */
+
+.diary-screen.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+/* Opening screen disappears */
+
+.opening-screen.hide {
+    opacity: 0;
+    transform: scale(0.97);
+    pointer-events: none;
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+/* =========================================
+   DIARY
+========================================= */
+
+.diary {
+    position: relative;
+
+    width: min(380px, 75vw);
+    aspect-ratio: 0.72;
+
+    border-radius: 12px 20px 20px 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d94b82,
+            #b92d68
+        );
+
+    box-shadow:
+        15px 20px 45px rgba(110, 25, 65, 0.28),
+        inset 5px 0 0 rgba(255, 255, 255, 0.12);
+
+    transform:
+        perspective(1000px)
+        rotateY(-5deg);
+
+    animation: diaryAppear 1.2s ease forwards;
+}
+
+
+/* Diary right-side pages */
+
+.diary::after {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    right: -9px;
+
+    width: 14px;
+    height: calc(100% - 20px);
+
+    border-radius: 0 8px 8px 0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fff8fb 0px,
+            #fff8fb 3px,
+            #f3dbe5 4px,
+            #fff8fb 6px
+        );
+
+    z-index: -1;
+}
+
+
+/* Diary inner border */
+
+.diary::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 8px 15px 15px 8px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DIARY RIBBON
+========================================= */
+
+.diary-ribbon {
+    position: absolute;
+
+    top: 0;
+    right: 38px;
+
+    width: 32px;
+    height: 90px;
+
+    background: #f7a8c8;
+
+    box-shadow:
+        0 5px 10px rgba(90, 20, 50, 0.15);
+}
+
+.diary-ribbon::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -14px;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 15px solid #f7a8c8;
+}
+
+
+/* =========================================
+   DIARY CONTENT
+========================================= */
+
+.diary-content {
+    position: absolute;
+
+    inset: 45px 30px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+.diary-small-text {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+
+    margin-bottom: 25px;
+}
+
+.diary h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(30px, 6vw, 45px);
+
+    line-height: 1.2;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 3px 10px rgba(90, 20, 50, 0.2);
+}
+
+.diary-heart {
+    font-size: 42px;
+
+    margin: 20px 0;
+
+    animation: diaryHeartBeat 2s ease-in-out infinite;
+}
+
+.diary-date {
+    font-size: 14px;
+
+    font-style: italic;
+
+    opacity: 0.85;
+
+    max-width: 240px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   OPEN DIARY BUTTON
+========================================= */
+
+.diary-open-button {
+    margin-top: 35px;
+
+    border: 1px solid rgba(157, 23, 77, 0.15);
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #9d174d;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(130, 25, 70, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.diary-open-button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(130, 25, 70, 0.25);
+}
+
+.diary-open-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   DIARY ANIMATIONS
+========================================= */
+
+@keyframes diaryAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            perspective(1000px)
+            rotateY(-15deg)
+            translateY(30px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            perspective(1000px)
+            rotateY(-5deg)
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes diaryHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+/* =========================================
+   CLOSED DIARY CONTAINER
+========================================= */
+
+.closed-diary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: auto 0;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* =========================================
+   OPEN DIARY
+========================================= */
+
+.open-diary {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: min(850px, 90vw);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+        translate(-50%, 40px)
+        scale(0.95);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+}
+
+
+/* When diary is opened */
+
+.open-diary.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translate(-50%, 0)
+        scale(1);
+}
+
+
+/* Hide closed diary */
+
+.closed-diary.hide {
+    opacity: 0;
+
+    transform:
+        scale(0.9)
+        translateY(-30px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DIARY CONTAINER
+========================================= */
+
+.open-diary {
+    width: min(1100px, 92vw);
+}
+
+
+/* =========================================
+   ONE FONT THROUGHOUT THE DIARY
+========================================= */
+
+.diary-page,
+.diary-page * {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+}
+
+
+/* =========================================
+   DIARY PAGE
+========================================= */
+
+.diary-page {
+    position: relative;
+
+    min-height: 780px;
+
+    padding:  70px 70px 55px;
+
+    /* Warm white notebook paper */
+    background-color: #fffdfb;
+
+    /* Single ruled notebook lines */
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 31px,
+            rgba(211, 91, 130, 0.16) 32px,
+            transparent 33px
+        );
+
+    border-radius: 8px 18px 18px 8px;
+
+    border: 1px solid #f1d9e2;
+
+    box-shadow:
+        0 25px 55px rgba(126, 35, 75, 0.20),
+        0 4px 12px rgba(126, 35, 75, 0.08);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    --heart-pink: #e66b95;
+}
+
+
+/* =========================================
+   NOTEBOOK MARGIN LINE
+========================================= */
+
+.diary-page::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 70px;
+
+    width: 2px;
+    height: 100%;
+
+    background: rgba(224, 83, 126, 0.28);
+
+    box-shadow:
+        1px 0 rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   NOTEBOOK BINDING
+========================================= */
+
+.diary-page::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 14px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to right,
+            #c83c73,
+            #e8759c,
+            #c83c73
+        );
+
+    box-shadow:
+        3px 0 8px rgba(120, 30, 70, 0.18);
+}
+
+
+/* =========================================
+   CHAPTER LABEL
+========================================= */
+
+.chapter-label {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 7px 18px;
+
+    margin-bottom: 25px;
+
+    background: #f8b6cc;
+
+    color: #8f3158;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        0 3px 5px rgba(130, 40, 75, 0.08);
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.diary-page h2 {
+    position: relative;
+
+    font-size: clamp(34px, 5vw, 58px);
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    color: #b52d61;
+
+    margin: 0 0 12px;
+
+    text-shadow:
+        1px 1px rgba(181, 45, 97, 0.08);
+}
+
+
+/* Decorative heart beside title */
+
+.diary-page h2::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: 5%;
+    top: 5px;
+
+    font-size: 38px;
+
+    color: var(--heart-pink);
+
+    transform: rotate(15deg);
+}
+
+
+/* =========================================
+   HEART DIVIDER
+========================================= */
+
+.page-divider {
+    color: #e75480;
+
+    font-size: 28px;
+
+    margin: 12px 0 20px;
+
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+.story-text {
+    position: relative;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    color: #4e3741;
+
+    text-align: left;
+
+    padding-left: 25px;
+}
+
+
+/* =========================================
+   LITTLE HANDWRITTEN NOTE
+========================================= */
+
+.page-note {
+    position: relative;
+
+    width: fit-content;
+
+    max-width: 500px;
+
+    margin: 35px auto 0;
+
+    padding: 13px 22px;
+
+    background: #ffd8e5;
+
+    color: #9e3d62;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    transform: rotate(-1.5deg);
+
+    box-shadow:
+        0 4px 10px rgba(130, 40, 75, 0.08);
+}
+
+
+/* Little doodle beside chapter label */
+
+.diary-page .chapter-label::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: -35px;
+    top: -10px;
+
+    color: #ec6f9a;
+
+    font-size: 25px;
+
+    transform: rotate(15deg);
+}
+
+
+/* Little sparkle */
+
+.diary-page .page-note::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: -35px;
+    top: -12px;
+
+    color: #ee7ba2;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   NEXT PAGE BUTTON
+========================================= */
+
+.next-page-button {
+    position: relative;
+
+    margin-top: 35px;
+
+    padding: 13px 28px;
+
+    border: 1px solid #d54a7d;
+
+    border-radius: 8px;
+
+    background: #d94b82;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(170, 45, 90, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.next-page-button:hover {
+    transform:
+        translateY(-3px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 10px 20px rgba(170, 45, 90, 0.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .diary-screen {
+        padding: 24px 8px;
+    }
+
+    .open-diary {
+        width: 94vw;
+    }
+
+    .diary-page {
+        min-height: 620px;
+
+        padding:
+            60px 30px 40px 55px;
+    }
+
+    .diary-page::before {
+        left: 45px;
+    }
+
+    .story-text {
+        font-size: 15px;
+
+        line-height: 1.9;
+
+        padding-left: 5px;
+    }
+
+    .diary-page h2 {
+        font-size: 34px;
+    }
+
+    .page-note {
+        font-size: 14px;
+    }
+
+}
+/* =========================================
+   DIARY PAGE TURN ANIMATION
+========================================= */
+
+.diary-page {
+    animation: pageEnter 0.8s ease both;
+}
+
+
+/* Old page leaving */
+
+.diary-page.page-exit {
+    animation: pageExit 0.6s ease forwards;
+}
+
+
+/* New page entering */
+
+@keyframes pageEnter {
+
+    from {
+        opacity: 0;
+        transform:
+            perspective(1200px)
+            rotateY(-12deg)
+            translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            perspective(1200px)
+            rotateY(0deg)
+            translateX(0);
+    }
+
+}
+
+
+/* Page leaving */
+
+@keyframes pageExit {
+
+    from {
+        opacity: 1;
+        transform:
+            perspective(1200px)
+            rotateY(0deg)
+            translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform:
+            perspective(1200px)
+            rotateY(12deg)
+            translateX(-35px);
+    }
+
+}
+/* =========================================
+   FINAL DIARY SIZE
+========================================= */
+
+.open-diary {
+    width: min(1100px, 92vw);
+}
+
+.open-diary .diary-page {
+    width: 100%;
+    min-height: 780px;
+    height: auto;
+    max-height: none;
+    box-sizing: border-box;
+}
+/* =========================================
+   MEMORY BOX OPENING
+========================================= */
+
+.memory-box {
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+.memory-box-screen.box-opening .memory-box {
+    transform: scale(1.08);
+    opacity: 0;
+}
+/* =========================================
+   CHAPTER 4 — MEMORY REVEAL
+========================================= */
+
+.memory-chapter {
+    position: fixed;
+    inset: 0;
+
+    z-index: 25;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.75),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #f8b4d9,
+            #ffc9df
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease,
+        transform 0.8s ease;
+}
+
+.memory-chapter.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.memory-chapter-content {
+    width: min(950px, 92vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 55px 60px;
+
+    background: #fffdfb;
+
+    border-radius: 12px 22px 22px 12px;
+
+    border: 1px solid #f1d9e2;
+
+    box-shadow:
+        0 25px 60px rgba(126, 35, 75, 0.20);
+
+    text-align: center;
+}
+
+
+.memory-chapter .chapter-label {
+    margin-bottom: 20px;
+}
+
+
+.memory-chapter h2 {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: clamp(32px, 5vw, 55px);
+
+    color: #b52d61;
+
+    margin-bottom: 15px;
+}
+
+
+.memory-intro {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    color: #704454;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* ---------- MEMORY CARDS ---------- */
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+    margin-top: 25px;
+}
+
+
+.memory-card-new {
+    padding: 25px;
+
+    background: #ffe5ee;
+
+    border: 1px solid #f5c5d6;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    box-shadow:
+        0 7px 18px rgba(150, 35, 80, 0.08);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.memory-card-new:nth-child(even) {
+    transform: rotate(1deg);
+
+    background: #fff0f5;
+}
+
+
+.memory-card-new:hover {
+    transform:
+        translateY(-5px)
+        rotate(0deg);
+
+    box-shadow:
+        0 12px 25px rgba(150, 35, 80, 0.15);
+}
+
+
+.memory-card-new .memory-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.memory-card-new h3 {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    color: #a52d5c;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+
+.memory-card-new p {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    color: #59404a;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ---------- CHAPTER 4 BUTTON ---------- */
+
+.memory-next-button {
+    margin-top: 35px;
+
+    padding: 13px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #d94b82;
+
+    color: white;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(170, 45, 90, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.memory-next-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(170, 45, 90, 0.25);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .memory-chapter {
+        padding: 20px;
+    }
+
+    .memory-chapter-content {
+        padding: 40px 25px;
+
+        max-height: 92vh;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+.memory-box-screen {
+    position: fixed;
+    inset: 0;
+
+    z-index: 24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.75),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #f8b4d9,
+            #ffc9df
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease,
+        transform 0.8s ease;
+}
+
+.memory-box-screen.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+/* =========================================
+   GIFT BOX
+========================================= */
+
+.gift-box {
+    position: relative;
+
+    width: 170px;
+    height: 145px;
+
+    margin: 0 auto 30px;
+
+    animation: giftFloat 3s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 15px 18px rgba(150, 35, 80, 0.18));
+}
+
+
+/* ---------- BOX BODY ---------- */
+
+.gift-body {
+    position: absolute;
+
+    left: 10px;
+    bottom: 0;
+
+    width: 150px;
+    height: 105px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f58bb2,
+            #d94b82
+        );
+
+    box-shadow:
+        inset 0 5px 10px rgba(255,255,255,0.25),
+        inset 0 -8px 15px rgba(130,30,70,0.12);
+}
+
+
+/* ---------- LID ---------- */
+
+.gift-lid {
+    position: absolute;
+
+    left: 3px;
+    top: 22px;
+
+    width: 164px;
+    height: 38px;
+
+    z-index: 3;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffabc8,
+            #e9679b
+        );
+
+    box-shadow:
+        0 6px 12px rgba(130,30,70,0.18);
+}
+
+
+/* ---------- VERTICAL RIBBON ---------- */
+
+.gift-ribbon-vertical {
+    position: absolute;
+
+    left: 62px;
+    top: 0;
+
+    width: 28px;
+    height: 105px;
+
+    background: #ffd1e1;
+
+    box-shadow:
+        inset 2px 0 rgba(255,255,255,0.35),
+        inset -2px 0 rgba(200,50,100,0.08);
+}
+
+
+/* ---------- HORIZONTAL RIBBON ---------- */
+
+.gift-ribbon-horizontal {
+    position: absolute;
+
+    left: 0;
+    top: 35px;
+
+    width: 150px;
+    height: 25px;
+
+    background: #ffd1e1;
+
+    box-shadow:
+        inset 0 2px rgba(255,255,255,0.35);
+}
+
+
+/* ---------- BOW ---------- */
+
+.gift-bow {
+    position: absolute;
+
+    left: 50%;
+    top: -32px;
+
+    transform: translateX(-50%);
+
+    font-size: 48px;
+
+    filter:
+        drop-shadow(0 4px 5px rgba(130,30,70,0.15));
+
+    animation: bowBounce 2s ease-in-out infinite;
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+
+@keyframes bowBounce {
+
+    0%,
+    100% {
+        transform:
+            translateX(-50%)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            rotate(3deg)
+            scale(1.05);
+    }
+}
+.memory-box {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.memory-box-small {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    color: #9b3f68;
+    margin-bottom: 18px;
+}
+
+.memory-box h2 {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.2;
+    color: #b52d61;
+    margin-bottom: 20px;
+}
+
+.memory-box-text {
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    color: #704454;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 20px auto 25px;
+}
+
+#openMemoryBoxButton {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+
+    background: #d94b82;
+    color: white;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(150, 35, 80, 0.2);
+
+    transition: 0.3s ease;
+}
+
+#openMemoryBoxButton:hover {
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(150, 35, 80, 0.28);
+}
+/* =========================================
+   CHAPTER 5 — FINAL PAGE
+========================================= */
+
+.final-chapter {
+    position: fixed;
+    inset: 0;
+
+    z-index: 30;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.8),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #f8b4d9,
+            #ffc9df
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.03);
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1s ease;
+}
+
+.final-chapter.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+
+.final-page {
+    position: relative;
+
+    width: min(850px, 92vw);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 60px 70px;
+
+    background-color: #fffdfb;
+
+    background-image:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 31px,
+            rgba(211, 91, 130, 0.16) 32px,
+            transparent 33px
+        );
+
+    border-radius: 8px 20px 20px 8px;
+
+    border: 1px solid #f1d9e2;
+
+    box-shadow:
+        0 25px 60px rgba(126, 35, 75, 0.22);
+
+    text-align: center;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+}
+
+
+/* Notebook binding */
+
+.final-page::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 14px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to right,
+            #c83c73,
+            #e8759c,
+            #c83c73
+        );
+}
+
+
+/* Title */
+
+.final-page h2 {
+    font-size: clamp(34px, 5vw, 55px);
+
+    line-height: 1.3;
+
+    color: #b52d61;
+
+    margin-bottom: 15px;
+}
+
+
+/* Main message */
+
+.final-text {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #59404a;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+/* Highlighted note */
+
+.final-note {
+    width: fit-content;
+
+    max-width: 90%;
+
+    margin: 35px auto;
+
+    padding: 18px 30px;
+
+    background: #ffd8e5;
+
+    color: #9e3d62;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    transform: rotate(-1deg);
+
+    box-shadow:
+        0 6px 15px rgba(130, 40, 75, 0.1);
+}
+
+.final-note span {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* Friendship Day */
+
+.friendship-message {
+    color: #b52d61;
+
+    font-size: 22px;
+
+    margin-top: 25px;
+}
+
+
+/* Decorative hearts */
+
+.final-hearts {
+    color: #e75480;
+
+    font-size: 30px;
+
+    margin: 20px 0;
+
+    animation: finalHeartBeat 2s ease-in-out infinite;
+}
+
+
+/* Last line */
+
+.ending-line {
+    color: #704454;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+}
+
+
+@keyframes finalHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .final-chapter {
+        padding: 15px;
+    }
+
+    .final-page {
+        padding: 50px 30px;
+        max-height: 92vh;
+    }
+
+    .final-text {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .final-note {
+        font-size: 16px;
+    }
+
+    .friendship-message {
+        font-size: 19px;
+    }
+}
